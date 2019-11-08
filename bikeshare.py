@@ -178,12 +178,11 @@ def main():
         if restart.lower() != 'yes':
             dataview = input('\nWould you like to see the raw data for your current paramater selections? Enter yes or no.\n')
             i = 0
-            p = 0  #number of lines user would like to view at one time
+            p = 0
             if dataview == 'yes':
                 p = int(input('How many lines would you like to view at time? (Enter an integer)\t'))
             while dataview == 'yes':
                 print(df.iloc[i:i+p,1:9])
-                #view next batch of lines
                 i += p
                 dataview = input('\n\n Would you like to see the next {} lines? yes or no     '.format(p))
             if input('\n\nWould you like to exit at this time? yes or no\t') != 'no':
