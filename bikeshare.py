@@ -2,6 +2,12 @@ import time
 import pandas as pd
 import numpy as np
 
+"""
+If running program on local PC. Download csv files to local PC,
+then repoint dictionary values in below 'CITY DATA' to location
+specific locations for each csv on your local PC.
+"""
+
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
