@@ -2,6 +2,12 @@ import time
 import pandas as pd
 import numpy as np
 
+"""
+If running program on local PC. Download csv files to local PC,
+then repoint dictionary values in below 'CITY DATA' to location
+specific locations for each csv on your local PC.
+"""
+
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -33,11 +39,11 @@ def get_filters():
     while month.lower() not in ['all','january', 'february','march','april','may','june']:
         if month == '':
             month = input('\nPlease enter a month name or enter "all" to return data for all months:\n\t')
-        elif month.lower() in ['july','august','september','october','november','december']: 
+        elif month.lower() in ['july','august','september','october','november','december']:
             #User enters valid month, but a month for which there is no data.
             print('\nWe apologize. We do not have data for your selected month. Please enter a month from January to June.')
             month = input('\t')
-        else: 
+        else:
             print("\nOops! ''", month, "'is not a valid value. Please try again. (Becareful of spelling!)")
             month = input('\tPlease enter a month name or enter "all" to return data for all months.\n\t')
 
@@ -69,10 +75,10 @@ def load_data(city, month, day):
     df['month'] = df['Start Time'].dt.month
     df['Hour'] = df['Start Time'].dt.hour
     df['weekday'] = df['Start Time'].dt.weekday_name
-    
+
     #match user string entry for month with numeric equivalent(1-12) for later filtering
     month_convert = {'january': 1, 'february': 2, 'march':3, 'april':4, 'may': 5, 'june': 6}
-    
+
     #Filter DataFrame based on user inputs
     if month != 'all' and day != 'All':
         df = df[(df['month'] == month_convert[month]) & (df['weekday'] == day)]
@@ -82,7 +88,7 @@ def load_data(city, month, day):
         df = df[(df['weekday'] == day)]
     else:
         None
-    
+
     return df
 
 def time_stats(df):
@@ -94,10 +100,10 @@ def time_stats(df):
     # TO DO: display the most common month
     months = ['january','february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
     print('\tMost common month:','\t'*2,months[df['month'].mode()[0] - 1].title())
-    
+
     # TO DO: display the most common day of week
     print('\tMost common day of week:','\t'*1,df['weekday'].mode()[0].title())
-                                                 
+
     # TO DO: display the most common start hour
     print('\tMost common start hour:','\t'*1,df['Hour'].mode()[0])
 
@@ -149,7 +155,7 @@ def user_stats(df):
     # TO DO: Display counts of user types
     df['User Type'].fillna('No User Type specified',inplace = True)
     print('\n\tBREAKDOWN BY USER TYPE:\n', pd.value_counts(df['User Type'].values))
-    
+
     # TO DO: Display counts of gender
     df['Gender'].fillna('No Gender specified', inplace = True)
     print('\n\tBREAKDOWN BY GENDER:\n',pd.value_counts(df['Gender'].values))
@@ -167,15 +173,15 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-        
+
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
-        #ask user if he/she'd like to restart or view raw data 
+
+        #ask user if he/she'd like to restart or view raw data
         restart = input('\nWould you like to restart? Enter yes or no.\t')
-        if restart.lower() != 'yes':    
+        if restart.lower() != 'yes':
             dataview = input('\nWould you like to see the raw data for your current paramater selections? Enter yes or no.\n')
             i = 0
             p = 0  #number of lines user would like to view at one time
@@ -184,11 +190,11 @@ def main():
             while dataview == 'yes':
                 print(df.iloc[i:i+p,1:9])
                 #view next batch of lines
-                i += p 
+                i += p
                 dataview = input('\n\n Would you like to see the next {} lines? yes or no     '.format(p))
             if input('\n\nWould you like to exit at this time? yes or no\t') != 'no':
                 break
 
-                
+
 if __name__ == "__main__":
 	main()
