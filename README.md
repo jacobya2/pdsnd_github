@@ -8,6 +8,7 @@ Project Title: **AJ's Bikeshare Interactive Inquiry**
 ### Description
 **Project Description:**  Returns descriptive statistical summaries on transit data from a bike share company.  
 **Source Data:** Data is provided by [Motivate](https://www.motivateco.com), a bike share system provider for many major cities in the United States.  
+Note: data provided covers three cities from January 2017 to June 2017.
 
 **Function:**
 1. Upon opening the project, user will select a city for which one wishes to see statistical summary and be presented additional optional filters.
