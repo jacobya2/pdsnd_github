@@ -30,12 +30,12 @@ Files used: chicago.csv, new_york_city.csv, washington.csv
 ### Credits
 http://www.datasciencemadesimple.com/mode-function-python-pandas-dataframe-row-column-wise-mode/  
 https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#computations-descriptive-stats  
-https://kite.com/blog/python/pandas-groupby-count-value-count/  
 https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html  
+https://pandas.pydata.org/pandas-docs/stable/reference/api
 
 ### Version History
 Record change history or new version releases for project. Include version number, change date  
 pdsnd_github v1, released 11/07/2019, initial release and submission to Udacity
 pdsnd_github v2, project resumbission to Udacity added three new commits this time
   giving the commits messages that follow rules in Udacity Commit Message Style guide.
-  Also added Version History section to README to track project change history. 
+  Also added Version History section to README to track project change history.
