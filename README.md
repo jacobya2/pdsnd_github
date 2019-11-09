@@ -28,11 +28,10 @@ Note: data provided covers three cities from January 2017 to June 2017.
 Files used: chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
-Websites referenced in order to help create the project's python script:  
 http://www.datasciencemadesimple.com/mode-function-python-pandas-dataframe-row-column-wise-mode/  
 https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#computations-descriptive-stats  
 https://kite.com/blog/python/pandas-groupby-count-value-count/  
 https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html  
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sort_values.html#pandas.Series.sort_values    
-https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-date-components  
-https://www.pitt.edu/~naraehan/python2/tutorial7.html
+
+### Version History
+Record change history or new version releases for project. Include version number, change date
