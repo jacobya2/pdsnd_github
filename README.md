@@ -13,3 +13,5 @@ Include the files used
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 
+### Version History
+Record change history or new version releases for project. Include version number, change date
